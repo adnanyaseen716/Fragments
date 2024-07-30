@@ -18,7 +18,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
-FrameLayout frameLayout;
 BottomNavigationView bottomNavigation;
 
     @Override
@@ -27,12 +26,9 @@ BottomNavigationView bottomNavigation;
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        frameLayout = findViewById(R.id.frameLayout);
         bottomNavigation = findViewById(R.id.bottomNavigation);
 
-
-            loadFragment(new HomeFragment());
-
+        loadFragment(new HomeFragment());
 
 
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -42,6 +38,7 @@ BottomNavigationView bottomNavigation;
 
                 if (itemId == R.id.navHome){
                     loadFragment(new HomeFragment());
+
                     return true;
                 }
                 if (itemId == R.id.navCart){
@@ -50,12 +47,13 @@ BottomNavigationView bottomNavigation;
                 }
                 if (itemId == R.id.navFavorite){
                     loadFragment(new FavouritesFragment());
-
                     return true;
                 }
                 if (itemId == R.id.navProfile){
+
                     loadFragment(new ProfileFragment());
                     return true;
+
                 }
                 return false;
             }

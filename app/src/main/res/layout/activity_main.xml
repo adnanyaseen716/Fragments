@@ -7,14 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/frameLayout"/>
 
 
+
             <com.google.android.material.bottomnavigation.BottomNavigationView
+
                 android:id="@+id/bottomNavigation"
                 app:labelVisibilityMode="labeled"
                 android:layout_width="match_parent"
@@ -23,8 +24,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:itemIconTint="@color/green"
-                app:itemTextColor="@color/green"
               />
 
 
