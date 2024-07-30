@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:icon="@drawable/personicon"
+        android:id="@+id/navHome"
+        android:title="Home"
+        android:enabled="true"
+
+        />
+
+    <item android:icon="@drawable/personicon"
+        android:id="@+id/navCart"
+        android:title="Cart"
+        android:enabled="true"
+
+        />
+    <item android:icon="@drawable/personicon"
+        android:id="@+id/navFavorite"
+        android:title="Favorite"
+        android:enabled="true"
+        />
+    <item android:icon="@drawable/personicon"
+        android:id="@+id/navProfile"
+        android:title="Profile"
+        android:enabled="true"
+        />
+
+</menu>
