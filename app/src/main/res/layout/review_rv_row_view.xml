@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +19,7 @@
         >
 
         <ImageView
-            android:id="@+id/iv"
+            android:id="@+id/ivUserImageReview"
             android:layout_width="50dp"
             android:layout_height="50dp"
             />
@@ -27,14 +28,39 @@
 
     <TextView
         android:id="@+id/tvReviewUserName"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/cardView"
-        app:layout_constraintStart_toEndOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="@id/cardViewReview"
+        app:layout_constraintStart_toEndOf="@id/cardViewReview"
         android:layout_marginStart="10dp"
         android:text="User Name"
         android:textSize="@dimen/large"
         android:textColor="@color/appColor"
+        />
+
+
+    <RatingBar
+        android:id="@+id/ratingBarRv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvReviewUserName"
+        app:layout_constraintStart_toStartOf="@id/tvReviewUserName"
+        app:layout_constraintEnd_toEndOf="@id/tvReviewUserName"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:progressTint="@color/appColor"
+        android:layout_marginEnd="110dp"
+        />
+
+    <TextView
+        android:id="@+id/tvReviewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tvReviewUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:textSize="@dimen/small"
+        android:text="12/05/2024"
         />
 
     <TextView
@@ -42,10 +68,11 @@
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/tvReviewUserName"
-        app:layout_constraintTop_toBottomOf="@id/tvReviewUserName"
+        app:layout_constraintTop_toBottomOf="@id/ratingBarRv"
         android:textColor="@color/black"
         android:textSize="@dimen/medium"
-        android:text="Content..."
+        android:text="Content ..."
+
         />
 
 
