@@ -6,7 +6,6 @@
     <item android:icon="@drawable/home"
         android:id="@+id/navHome"
         android:title="Home"
-        android:enabled="true"
 
         />
 

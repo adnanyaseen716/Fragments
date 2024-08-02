@@ -1,63 +1,86 @@
 package pk.adnan.ecommerceapp;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
 public class MainActivity extends AppCompatActivity {
-BottomNavigationView bottomNavigation;
-
+//BottomNavigationView bottomNavigation;
+    Button btnWriteReview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.product_click_listener);
+        btnWriteReview = findViewById(R.id.btnWriteReview);
 
-        bottomNavigation = findViewById(R.id.bottomNavigation);
-
-        loadFragment(new HomeFragment());
-
-
-        bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        btnWriteReview.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int itemId = menuItem.getItemId();
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(MainActivity.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.write_review_dlg);
 
-                if (itemId == R.id.navHome){
-                    loadFragment(new HomeFragment());
+                dialog.show();
 
-                    return true;
-                }
-                if (itemId == R.id.navCart){
-                    loadFragment(new CartFragment());
-                    return true;
-                }
-                if (itemId == R.id.navFavorite){
-                    loadFragment(new FavouritesFragment());
-                    return true;
-                }
-                if (itemId == R.id.navProfile){
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT , ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
 
-                    loadFragment(new ProfileFragment());
-                    return true;
-
-                }
-                return false;
             }
         });
+
+
+
+
+//
+//
+//        bottomNavigation = findViewById(R.id.bottomNavigation);
+//
+//        loadFragment(new HomeFragment());
+//
+//
+//        bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//                int itemId = menuItem.getItemId();
+//
+//                if (itemId == R.id.navHome){
+//                    loadFragment(new HomeFragment());
+//
+//                    return true;
+//                }
+//                if (itemId == R.id.navCart){
+//                    loadFragment(new CartFragment());
+//                    return true;
+//                }
+//                if (itemId == R.id.navFavorite){
+//                    loadFragment(new FavouritesFragment());
+//                    return true;
+//                }
+//                if (itemId == R.id.navProfile){
+//
+//                    loadFragment(new ProfileFragment());
+//
+//                    return true;
+//
+//                }
+//                return false;
+//            }
+//        });
 
     }
 
@@ -68,4 +91,5 @@ BottomNavigationView bottomNavigation;
         transaction.replace(R.id.frameLayout , fragment);
         transaction.commit();
     }
+
 }

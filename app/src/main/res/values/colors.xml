@@ -5,6 +5,7 @@
     <color name="orange">#F4511E</color>
     <color name="lavender">#8692f7</color>
     <color name="green">#24F32F</color>
-
+    <color name="appColor">#C62828</color>
+    <color name="grey">#5E5C5C</color>
 
 </resources>
