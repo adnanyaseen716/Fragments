@@ -5,6 +5,33 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:cardElevation="15dp"
+        android:background="@color/appColor"
+        android:backgroundTint="@color/appColor"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:drawableTint="@color/white"
+            android:drawableLeft="@drawable/back"
+            android:layout_gravity="center"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -25,7 +52,22 @@
         android:layout_marginTop="80dp"
         app:cardElevation="7dp"
         app:cardCornerRadius="15dp"
-        />
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/heart_outline"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            />
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </androidx.cardview.widget.CardView>
+
 
 <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
@@ -152,6 +194,7 @@
     app:icon="@drawable/write"
     app:iconTint="@color/white"
     />
+
 
 
 
